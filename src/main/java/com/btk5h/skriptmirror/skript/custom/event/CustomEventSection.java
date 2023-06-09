@@ -89,7 +89,7 @@ public class CustomEventSection extends CustomSyntaxSection<EventSyntaxInfo> {
 
       int i = 1;
       for (String pattern : patternStrings) {
-        register(EventSyntaxInfo.create(script, pattern, i++));
+        register(EventSyntaxInfo.create(script, "[on ]" + pattern, i++));
       }
 
       if (whichInfo.size() == 0) {
