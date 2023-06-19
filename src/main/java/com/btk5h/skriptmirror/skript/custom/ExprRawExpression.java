@@ -5,6 +5,7 @@ import ch.njol.skript.classes.Changer;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.lang.VariableString;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import com.btk5h.skriptmirror.WrappedEvent;
@@ -69,6 +70,7 @@ public class ExprRawExpression extends SimpleExpression<Expression> {
   public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed,
                       SkriptParser.ParseResult parseResult) {
     expr = SkriptUtil.defendExpression(exprs[0]);
+    if (expr instanceof VariableString) return false;
     return SkriptUtil.canInitSafely(expr);
   }
 }

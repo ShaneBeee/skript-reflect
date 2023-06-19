@@ -2,9 +2,11 @@ package com.btk5h.skriptmirror;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.effects.EffReturn;
+import ch.njol.skript.expressions.ExprRawString;
 import ch.njol.util.Checker;
 import com.btk5h.skriptmirror.skript.EffExpressionStatement;
 import com.btk5h.skriptmirror.skript.custom.ExprMatchedPattern;
+import com.btk5h.skriptmirror.skript.custom.ExprRawExpression;
 import com.btk5h.skriptmirror.skript.custom.condition.CustomCondition;
 import com.btk5h.skriptmirror.skript.custom.effect.CustomEffect;
 import com.btk5h.skriptmirror.skript.custom.expression.CustomExpression;
@@ -33,7 +35,9 @@ public class ParseOrderWorkarounds {
     EffReturn.class.getCanonicalName(),
     ExprMatchedPattern.class.getCanonicalName(),
     "ch.njol.skript.effects.EffContinue",
-    "com.ankoki.skjade.elements.conditions.CondBoolean"
+    "com.ankoki.skjade.elements.conditions.CondBoolean",
+    ExprRawExpression.class.getCanonicalName(),
+    ExprRawString.class.getCanonicalName()
   };
 
   public static void reorderSyntax() {
